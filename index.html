@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JSON test</h2>
+    <table id="output"></table>
+
+
+    <script type="text/javascript">
+    var divOutput = document.getElementById("output");
+    var outputHtml = "";
+    var strHtml = 'var json = {"435328":{"rqsp":[4.80,3.80,1.52],"sp":[2.17,2.95,3.10]},"435329":{"rqsp":[4.90,3.90,1.50],"sp":[2.22,3.05,2.90]},"435330":{"rqsp":[1.61,3.65,4.30],"sp":[3.35,3.05,2.01],}};';
+
+    eval(strHtml)
+
+    var matchidArr = Object.keys(json);
+    for (var i = 0; i < matchidArr.length; i++) {
+        var sp = json[matchidArr[i]]["sp"];
+
+        outputHtml += matchidArr[i] + " sp: " + sp + "</br>";
+    }
+
+
+    divOutput.innerHTML = outputHtml;
+    for (var key in json) {
+        console.log(' name=' + key + ' value=' + Object.keys(json[key]));
+    }
+
+//console.log(json)
+//console.log("json: " + JSON.stringify(json))
+</script>
+
+
+</body>
+
+</html>
